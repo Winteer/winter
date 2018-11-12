@@ -1,2 +1,2 @@
 winter is comming.
-everything is growing
+everything is dying.
