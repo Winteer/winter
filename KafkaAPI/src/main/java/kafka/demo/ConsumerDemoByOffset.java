@@ -23,7 +23,7 @@ public class ConsumerDemoByOffset {
     public KafkaConsumer<String, String> consumer;
 
     public KafkaConsumer<String, String> getConsumer(String ipPort, String groupId, String topic, String offsetPath) {
-
+        //配置文件
         Properties props = new Properties();
         props.put("group.id", groupId);
         props.put("bootstrap.servers", ipPort);
@@ -54,7 +54,6 @@ public class ConsumerDemoByOffset {
         TopicPartition p7 = new TopicPartition(topic, 7);
         TopicPartition p8 = new TopicPartition(topic, 8);
         TopicPartition p9 = new TopicPartition(topic, 9);
-
         List<TopicPartition> list = new ArrayList();
         list.add(p0);
         list.add(p1);
@@ -80,9 +79,6 @@ public class ConsumerDemoByOffset {
         return consumer;
     }
 
-    public void addOffset(String offsetPath){
-
-    }
     public static void main(String[] args) {
         ConsumerDemoByOffset coff = new ConsumerDemoByOffset();
         KafkaConsumer<String, String> consumer = coff.getConsumer("KafkaCluster1:9092","test","zytest","F:\\Kafka\\KafkaOffsetLog");
