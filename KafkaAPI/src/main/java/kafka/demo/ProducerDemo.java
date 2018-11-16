@@ -46,7 +46,7 @@ public class ProducerDemo {
         List<String> messages = new ArrayList<>();
         messages.add("this is the first message.");
         messages.add("this is the second message.");
-        ProducerDemo producerDemo = new ProducerDemo("172.46.252.88:9092,172.46.252.89:9092,172.46.252.90:9092");
+        ProducerDemo producerDemo = new ProducerDemo("KafkaCluster1:9092,KafkaCluster2:9092,KafkaCluster3:9092");
         try {
             producerDemo.sendMessage("zytest",messages);
         } catch (InterruptedException e) {

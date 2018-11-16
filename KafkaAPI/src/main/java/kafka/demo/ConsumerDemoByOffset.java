@@ -86,7 +86,7 @@ public class ConsumerDemoByOffset {
     }
     public static void main(String[] args) {
         ConsumerDemoByOffset coff = new ConsumerDemoByOffset();
-        KafkaConsumer<String, String> consumer = coff.getConsumer("172.46.252.88:9092","test","zytest","F:\\Kafka\\ZhaJiKafkaOffsetLog");
+        KafkaConsumer<String, String> consumer = coff.getConsumer("KafkaCluster1:9092","test","zytest","F:\\Kafka\\KafkaOffsetLog");
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
@@ -94,7 +94,7 @@ public class ConsumerDemoByOffset {
                 System.out.println(value);
                 // 记录topic下每个partition的OffSet到本地文件
                 try {
-                    rewriteendline("F:/Kafka/ZhaJiKafkaOffsetLog/" + record.partition() + ".txt", String.valueOf(record.offset()));
+                    rewriteendline("F:/Kafka/KafkaOffsetLog/" + record.partition() + ".txt", String.valueOf(record.offset()));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -40,7 +40,7 @@ public class ConsumerDemo {
     public static void main(String[] args) {
 
 		ConsumerDemo conDemo = new ConsumerDemo();
-		KafkaConsumer<String, String> consumer = conDemo.getConsumer("172.46.252.88:9092","test","zytest");
+		KafkaConsumer<String, String> consumer = conDemo.getConsumer("KafkaCluster1:9092","test","zytest");
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
