@@ -118,7 +118,5 @@ public class txtIOUtil {
         }
         file.close();
         writeendline(filepath, string);
-
     }
-
 }

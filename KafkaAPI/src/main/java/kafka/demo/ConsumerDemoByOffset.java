@@ -20,7 +20,6 @@ import static kafka.util.txtIOUtil.*;
  **/
 public class ConsumerDemoByOffset {
 
-
     public KafkaConsumer<String, String> consumer;
 
     public KafkaConsumer<String, String> getConsumer(String ipPort, String groupId, String topic, String offsetPath) {
